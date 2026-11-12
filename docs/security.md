@@ -13,6 +13,7 @@ Security scanning runs automatically alongside type analysis, no extra configura
 |-----------------|----------|---------------------------------------------------------------|
 | SQL Injection   | A03:2021 | `DB::statement()`, `DB::unprepared()`, raw query methods      |
 | Shell Injection | A03:2021 | `Process::run()`, `Process::command()`                        |
+| Code Injection (Blade) | A03:2021 | Templates compiled from strings: `Blade::render()`, `Blade::compileString()`, `new RawTemplate()` (Laravel 13.43+) |
 | XSS             | A03:2021 | `Response::make()` with unescaped content                     |
 | XSS (Blade templates) | A03:2021 | Opt-in with `<blade />`: unescaped `{!! $userInput !!}` output, view data and class-component properties. See [Blade coverage](blade.md#security-coverage) |
 | Header Injection | A03:2021 | `Response::make()`, `response()`, and `new Response()` with user-controlled header values; mail sender/recipient addresses (`Mailable` `from()`, `to()`, `cc()`, `bcc()`, `replyTo()`; `MailMessage` `from()`, `cc()`, `bcc()`, `replyTo()`) |

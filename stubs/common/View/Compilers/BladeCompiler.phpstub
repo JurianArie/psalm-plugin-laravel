@@ -1,0 +1,32 @@
+<?php
+
+namespace Illuminate\View\Compilers;
+
+class BladeCompiler extends Compiler implements CompilerInterface
+{
+    /**
+     * Compile the given Blade template contents.
+     *
+     * The result is PHP code that Blade includes when the view renders.
+     *
+     * @param  string  $value
+     * @return string
+     *
+     * @psalm-taint-sink eval $value
+     */
+    public function compileString($value) {}
+
+    /**
+     * Evaluate and render a Blade string to HTML.
+     *
+     * The string is compiled as a Blade template and executed, so `{{ exec('id') }}` runs.
+     *
+     * @param  string  $string
+     * @param  array  $data
+     * @param  bool  $deleteCachedView
+     * @return string
+     *
+     * @psalm-taint-sink eval $string
+     */
+    public static function render($string, $data = [], $deleteCachedView = false) {}
+}

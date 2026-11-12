@@ -73,6 +73,7 @@ final class FacadeTaintForwardingHandler implements AfterCodebasePopulatedInterf
         \Illuminate\Support\Facades\Storage::class => [\Illuminate\Filesystem\FilesystemAdapter::class],
         \Illuminate\Support\Facades\File::class => [\Illuminate\Filesystem\Filesystem::class],
         \Illuminate\Support\Facades\Artisan::class => [\Illuminate\Foundation\Console\Kernel::class],
+        \Illuminate\Support\Facades\Blade::class => [\Illuminate\View\Compilers\BladeCompiler::class],
         \Illuminate\Support\Facades\Redirect::class => [\Illuminate\Routing\Redirector::class],
         \Illuminate\Support\Facades\Response::class => [\Illuminate\Routing\ResponseFactory::class],
         \Illuminate\Support\Facades\Process::class => [\Illuminate\Process\PendingProcess::class],
