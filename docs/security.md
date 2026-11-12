@@ -12,7 +12,7 @@ Security scanning runs automatically alongside type analysis, no extra configura
 | Vulnerability   | OWASP    | Examples                                                      |
 |-----------------|----------|---------------------------------------------------------------|
 | SQL Injection   | A03:2021 | `DB::statement()`, `DB::unprepared()`, raw query methods      |
-| Shell Injection | A03:2021 | `Process::run()`, `Process::command()`                        |
+| Shell Injection | A03:2021 | `Process::run()`, `Process::command()`, `Process::start()` with a string command; an array command runs without a shell and is not reported |
 | Code Injection (Blade) | A03:2021 | Templates compiled from strings: `Blade::render()`, `Blade::compileString()`, `new RawTemplate()` (Laravel 13.43+) |
 | XSS             | A03:2021 | `Response::make()` with unescaped content                     |
 | XSS (Blade templates) | A03:2021 | Opt-in with `<blade />`: unescaped `{!! $userInput !!}` output, view data and class-component properties. See [Blade coverage](blade.md#security-coverage) |

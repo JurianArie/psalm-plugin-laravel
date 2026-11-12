@@ -1,0 +1,41 @@
+<?php
+
+namespace Illuminate\Support\Facades;
+
+class Process extends Facade
+{
+    /**
+     * Specify the command that will invoke the process.
+     *
+     * Real methods: `FacadeTaintForwardingHandler` copies plain sinks only, so the conditional
+     * sink of `PendingProcess` (an array command runs without a shell) is restated here.
+     *
+     * @param  array|string  $command
+     * @return \Illuminate\Process\PendingProcess
+     *
+     * @psalm-taint-sink ($command is array ? null : 'shell') $command
+     */
+    public static function command(array|string $command) {}
+
+    /**
+     * Run the process.
+     *
+     * @param  array|string|null  $command
+     * @param  callable|null  $output
+     * @return \Illuminate\Contracts\Process\ProcessResult
+     *
+     * @psalm-taint-sink ($command is array ? null : 'shell') $command
+     */
+    public static function run(array|string|null $command = null, ?callable $output = null) {}
+
+    /**
+     * Start the process in the background.
+     *
+     * @param  array|string|null  $command
+     * @param  callable|null  $output
+     * @return \Illuminate\Process\InvokedProcess|\Illuminate\Process\FakeInvokedProcess
+     *
+     * @psalm-taint-sink ($command is array ? null : 'shell') $command
+     */
+    public static function start(array|string|null $command = null, ?callable $output = null) {}
+}
