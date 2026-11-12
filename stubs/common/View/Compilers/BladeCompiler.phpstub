@@ -7,8 +7,6 @@ class BladeCompiler extends Compiler implements CompilerInterface
     /**
      * Compile the given Blade template contents.
      *
-     * The result is PHP code that Blade includes when the view renders.
-     *
      * @param  string  $value
      * @return string
      *
@@ -18,8 +16,6 @@ class BladeCompiler extends Compiler implements CompilerInterface
 
     /**
      * Evaluate and render a Blade string to HTML.
-     *
-     * The string is compiled as a Blade template and executed, so `{{ exec('id') }}` runs.
      *
      * @param  string  $string
      * @param  array  $data

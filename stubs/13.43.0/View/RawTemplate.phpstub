@@ -7,8 +7,6 @@ class RawTemplate
     /**
      * Create a new raw template instance.
      *
-     * A component returning it from `render()` has the template compiled as Blade and executed.
-     *
      * @param  literal-string  $template
      *
      * @psalm-taint-sink eval $template
