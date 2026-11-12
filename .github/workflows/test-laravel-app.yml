@@ -2,14 +2,7 @@ name: Test Laravel app
 
 on:
   workflow_dispatch:
-  push:
-    branches: [4.x]
-    paths:
-      - '**.php'
-      - '**.phpstub'
-      - 'composer.json'
-      - 'tests/Application/laravel*'
-      - '.github/workflows/test-laravel-app.yml'
+  push: ~
   pull_request:
     paths:
       - '**.php'

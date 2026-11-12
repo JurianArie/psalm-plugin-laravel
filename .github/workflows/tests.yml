@@ -2,18 +2,7 @@ name: Tests
 
 on:
   workflow_dispatch:
-  push:
-    # Both maintained release lines: a 3.x backport must run the same matrix as
-    # 4.x before it can be tagged. GitHub reads this file from the branch
-    # being pushed, so the entry only takes effect once it exists on that branch.
-    branches: [4.x, 3.x]
-    paths:
-      - '**.php'
-      - '**.phpstub'
-      - '**.phpt'
-      - 'composer.json'
-      - '.github/workflows/tests.yml'
-      - 'bin/ci/check-phpt-conventions.sh'
+  push: ~
   pull_request:
     paths:
       - '**.php'

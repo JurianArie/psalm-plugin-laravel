@@ -5,10 +5,7 @@ name: Spelling
 
 on:
   pull_request:
-  push:
-    branches:
-      - "4.x"
-      - "3.x"
+  push: ~
 
 permissions:
   contents: read

@@ -1,11 +1,7 @@
 name: Code Style
 
 on:
-  push:
-    branches: [4.x]
-    paths:
-      - '**.php'
-      - 'composer.json'
+  push: ~
   pull_request:
     paths:
       - '**.php'
